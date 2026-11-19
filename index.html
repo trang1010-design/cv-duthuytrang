@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV | Du Thùy Trang – Brand Marketing Manager</title>
+<style>
+  :root {
+    --accent: #9E3B3D;
+    --accent-dark: #7A292B;
+    --accent-soft: #FDF5F5;
+    --accent-border: #E8CCCC;
+    --bar-fill: #C68A8B;
+    --ink: #1E242B;
+    --ink-muted: #525B68;
+    --line: #E6E8EC;
+    --bg-canvas: #EEF1F5;
+    --paper: #FFFFFF;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 24px 16px 48px;
+    background-color: var(--bg-canvas);
+    color: var(--ink);
+    font-family: 'Inter', 'Segoe UI', 'Noto Sans', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.54;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Strict 2-language toggle */
+  html[data-lang="vi"] .lang-en {
+    display: none !important;
+  }
+  html[data-lang="en"] .lang-vi {
+    display: none !important;
+  }
+
+  /* Top Language Toolbar (screen only) */
+  .toolbar {
+    max-width: 860px;
+    margin: 0 auto 16px auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 16px rgba(20, 28, 38, 0.06);
+    position: sticky;
+    top: 10px;
+    z-index: 50;
+  }
+  .toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .toolbar-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-right: 4px;
+  }
+  .segmented {
+    display: inline-flex;
+    background: #F1F3F6;
+    padding: 3px;
+    border-radius: 9px;
+    border: 1px solid #E1E5EC;
+    gap: 3px;
+  }
+  .mode-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-muted);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.16s ease;
+  }
+  .mode-btn:hover {
+    color: var(--accent);
+  }
+  .mode-btn.active {
+    background: var(--accent);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(158, 59, 61, 0.25);
+  }
+  .print-btn {
+    appearance: none;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.16s ease;
+  }
+  .print-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .print-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Main CV Sheet */
+  .cv-sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(20, 28, 38, 0.08);
+    overflow: hidden;
+    border: 1px solid #E2E5EA;
+  }
+
+  /* Header Banner */
+  .cv-header {
+    position: relative;
+    background: linear-gradient(135deg, #FCF6F6 0%, #FFFFFF 65%, #FBF2F2 100%);
+    border-bottom: 3px solid var(--accent);
+    padding: 26px 34px 22px 34px;
+    overflow: hidden;
+  }
+  .header-deco {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 240px;
+    height: 180px;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .avatar-frame {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(145deg, var(--accent) 0%, #D39A9B 100%);
+    box-shadow: 0 6px 18px rgba(158, 59, 61, 0.18);
+  }
+  .avatar-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    background: #FFFFFF;
+    border: 2.5px solid #FFFFFF;
+  }
+  .header-details {
+    flex: 1;
+    min-width: 0;
+  }
+  .header-name-row {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid #E8D2D2;
+  }
+  .candidate-name {
+    margin: 0 0 3px 0;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+  .candidate-role {
+    font-size: 13.8px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 16px;
+    font-size: 12.5px;
+    color: #343C47;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    min-width: 0;
+  }
+  .contact-item span,
+  .contact-link {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .contact-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .contact-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .meta-svg {
+    margin-top: 2px;
+  }
+  .contact-item.full {
+    grid-column: 1 / -1;
+  }
+  .meta-svg {
+    width: 13.5px;
+    height: 13.5px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Body Sections */
+  .cv-body {
+    padding: 24px 34px 32px 34px;
+  }
+
+  .cv-section {
+    margin-bottom: 22px;
+  }
+  .cv-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title-bar {
+    margin-bottom: 11px;
+    border-bottom: 2px solid #EFE4E4;
+    padding-bottom: 5px;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .sec-svg {
+    width: 17px;
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 5px;
+    padding: 3px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .sec-svg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Objective */
+  .objective-p {
+    margin: 0;
+    color: #2A313A;
+    font-size: 13.3px;
+    line-height: 1.58;
+    text-align: left;
+  }
+
+  /* Education */
+  .edu-card {
+    background: #FCF9F9;
+    border: 1px solid #EFE3E3;
+    border-radius: 8px;
+    padding: 11px 15px;
+  }
+  .edu-school {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .edu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .edu-period {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    background: #FFFFFF;
+    border: 1px solid var(--accent-border);
+    padding: 1px 9px;
+    border-radius: 99px;
+  }
+
+  /* Experience Cards */
+  .exp-card {
+    padding: 13px 0 14px 0;
+    border-bottom: 1px solid var(--line);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .exp-card:first-of-type {
+    padding-top: 2px;
+  }
+  .exp-card:last-of-type {
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+  .exp-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .sector-icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .sector-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .exp-head-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .exp-role-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .role-title {
+    font-size: 13.8px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.28;
+  }
+  .period-pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 1.5px 9px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .company-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+  }
+  .key-badge {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 11.8px;
+    font-weight: 600;
+    color: #5C2627;
+    background: #FAF2F2;
+    border: 1px solid #E8CECE;
+    border-radius: 5px;
+    padding: 3px 9px;
+    line-height: 1.4;
+  }
+
+  .bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5px;
+  }
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.48;
+    color: #2A313A;
+  }
+  .b-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 7.5px;
+    flex-shrink: 0;
+  }
+
+  /* Skills (compact 2-column grid for clean executive balance) */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 26px;
+  }
+  .skill-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .skill-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .skill-label {
+    font-size: 12.6px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .skill-bar-track {
+    width: 100%;
+    height: 7px;
+    background: #ECEEF2;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--bar-fill) 100%);
+    border-radius: 99px;
+  }
+
+  /* Core Competencies */
+  .comp-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .comp-pill {
+    display: inline-block;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: #5C2627;
+    font-size: 12.2px;
+    font-weight: 600;
+    padding: 4.5px 11px;
+    border-radius: 6px;
+  }
+
+  /* Interests */
+  .interests-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .interest-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #F8F9FB;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 12.6px;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 99px;
+  }
+  .int-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+    display: inline-flex;
+  }
+  .int-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Responsive mobile view */
+  @media (max-width: 700px) {
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      padding: 10px 10px 32px;
+      font-size: 13.5px;
+    }
+    .toolbar {
+      top: 6px;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      gap: 8px;
+    }
+    .toolbar-group {
+      flex: 1 1 auto;
+      justify-content: space-between;
+    }
+    .toolbar-group:last-child {
+      justify-content: flex-end;
+    }
+    .mode-btn, .print-btn {
+      padding: 7px 12px;
+      font-size: 12px;
+      min-height: 34px;
+    }
+    .cv-sheet {
+      border-radius: 10px;
+    }
+    .cv-header {
+      padding: 20px 16px 18px;
+    }
+    .header-deco {
+      width: 170px;
+      height: 130px;
+      opacity: 0.35;
+    }
+    .header-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+    .avatar-frame {
+      flex: 0 0 104px;
+      width: 104px;
+      height: 104px;
+    }
+    .header-details {
+      width: 100%;
+    }
+    .candidate-name {
+      font-size: 21px;
+    }
+    .candidate-role {
+      font-size: 13.2px;
+    }
+    .contact-list {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid #EFE0E0;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .cv-body {
+      padding: 18px 16px 24px;
+    }
+    .cv-section {
+      margin-bottom: 20px;
+    }
+    .section-heading {
+      font-size: 13.8px;
+    }
+    .edu-card {
+      padding: 10px 12px;
+    }
+    .exp-head {
+      gap: 10px;
+    }
+    .sector-icon {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+    }
+    .exp-role-line {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .role-title {
+      font-size: 13.5px;
+    }
+    .company-name {
+      font-size: 12.4px;
+    }
+    .key-badge {
+      display: block;
+      font-size: 11.5px;
+      padding: 4px 8px;
+    }
+    .bullet-list {
+      padding-left: 4px;
+      gap: 6px;
+    }
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 11px;
+    }
+    .comp-pill {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+    .interest-chip {
+      font-size: 12.2px;
+      padding: 5px 11px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding: 8px 6px 24px;
+    }
+    .toolbar {
+      padding: 8px 10px;
+    }
+    .toolbar-label {
+      display: none;
+    }
+    .toolbar-group {
+      width: 100%;
+      justify-content: center;
+    }
+    .segmented {
+      flex: 1;
+    }
+    .mode-btn {
+      flex: 1;
+      text-align: center;
+    }
+    .print-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .cv-header, .cv-body {
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+    .candidate-name {
+      font-size: 19.5px;
+    }
+  }
+
+  /* Print Styles (clean A4 PDF export in selected language) */
+  @page {
+    size: A4;
+    margin: 12mm 13mm;
+  }
+  @media print {
+    body {
+      background: #FFFFFF;
+      padding: 0;
+      font-size: 11px;
+      line-height: 1.44;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .toolbar {
+      display: none !important;
+    }
+    .cv-sheet {
+      max-width: 100% !important;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .cv-header {
+      padding: 16px 20px 14px 20px;
+    }
+    .avatar-frame {
+      flex: 0 0 96px;
+      width: 96px;
+      height: 96px;
+    }
+    .cv-body {
+      padding: 14px 20px 16px 20px;
+    }
+    .candidate-name {
+      font-size: 20px;
+    }
+    .candidate-role {
+      font-size: 12px;
+    }
+    .contact-list {
+      font-size: 10.8px;
+    }
+    .section-heading {
+      font-size: 12.5px;
+    }
+    .role-title {
+      font-size: 11.8px;
+    }
+    .company-name {
+      font-size: 11.2px;
+    }
+    .bullet-list {
+      padding-left: 48px;
+    }
+    .bullet-list li, .objective-p {
+      font-size: 10.9px;
+    }
+    .cv-section {
+      margin-bottom: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar" role="region" aria-label="Language Switcher">
+    <div class="toolbar-group">
+      <span class="toolbar-label lang-vi">Ngôn ngữ:</span>
+      <span class="toolbar-label lang-en">Language:</span>
+      <div class="segmented" role="tablist">
+        <button type="button" class="mode-btn active" data-set-lang="vi" role="tab" aria-selected="true">Tiếng Việt</button>
+        <button type="button" class="mode-btn" data-set-lang="en" role="tab" aria-selected="false">English</button>
+      </div>
+    </div>
+    <div class="toolbar-group">
+      <button type="button" class="print-btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span class="lang-vi">In / Lưu PDF</span>
+        <span class="lang-en">Print / Save PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="cv-sheet">
+    <header class="cv-header">
+      <svg class="header-deco" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="195" cy="35" r="78" stroke="#9E3B3D" stroke-opacity="0.16" stroke-width="1.5"/>
+        <circle cx="195" cy="35" r="52" stroke="#9E3B3D" stroke-opacity="0.20" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <path d="M90 145C130 95 170 115 225 45" stroke="#9E3B3D" stroke-opacity="0.24" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="132" cy="111" r="3.5" fill="#9E3B3D" fill-opacity="0.35"/>
+        <circle cx="176" cy="95" r="3.5" fill="#9E3B3D" fill-opacity="0.35"/>
+        <circle cx="225" cy="45" r="4.5" fill="#9E3B3D" fill-opacity="0.45"/>
+      </svg>
+
+      <div class="header-inner">
+        <div class="avatar-frame">
+          <img src="data:image/jpeg;base64,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" alt="Du Thùy Trang / Du Thuy Trang">
+        </div>
+        <div class="header-details">
+          <div class="header-name-row">
+            <div class="lang-vi">
+              <h1 class="candidate-name">Du Thùy Trang</h1>
+              <div class="candidate-role">Chuyên gia Brand Marketing &amp; Quản lý Dự án</div>
+            </div>
+            <div class="lang-en">
+              <h1 class="candidate-name">Du Thuy Trang</h1>
+              <div class="candidate-role">Brand Marketing &amp; Project Management Professional</div>
+            </div>
+          </div>
+
+          <div class="contact-list lang-vi">
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:0767899914" class="contact-link">0767899914</a></div>
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Nữ</span></div>
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:dutrangvn@gmail.com" class="contact-link">dutrangvn@gmail.com</a></div>
+            <div class="contact-item full"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>154/8/54 Âu Dương Lân, Phường 4, Quận 8, TP. Hồ Chí Minh</span></div>
+          </div>
+
+          <div class="contact-list lang-en">
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:0767899914" class="contact-link">0767899914</a></div>
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Female</span></div>
+            <div class="contact-item"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:dutrangvn@gmail.com" class="contact-link">dutrangvn@gmail.com</a></div>
+            <div class="contact-item full"><svg class="meta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>154/8/54 Au Duong Lan, Ward 4, District 8, Ho Chi Minh City</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cv-body">
+
+      <!-- 1. OBJECTIVE -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
+            <span class="lang-vi">Mục tiêu nghề nghiệp</span>
+            <span class="lang-en">Objective</span>
+          </h2>
+        </div>
+        <p class="objective-p lang-vi">Chuyên gia Brand Marketing với hơn 9 năm kinh nghiệm dẫn dắt các chiến dịch ra mắt sản phẩm, truyền thông tích hợp (IMC) và tăng trưởng thương hiệu đa lĩnh vực gồm FMCG, dược phẩm, bất động sản, F&amp;B, công nghệ và khởi nghiệp. Sở hữu năng lực điều phối dự án đa phòng ban, hoạch định chiến lược Marketing và tạo ra kết quả kinh doanh đo lường được như ra mắt sản phẩm thành công, chiến dịch bán hết sản phẩm (sell-out) và tăng trưởng doanh số. Mong muốn đóng góp tư duy chiến lược, sự sáng tạo và năng lực thực thi xuất sắc cho đội ngũ Marketing năng động.</p>
+        <p class="objective-p lang-en">Brand Marketing professional with over 9 years of experience spearheading product launches, integrated marketing campaigns (IMC), and brand growth across FMCG, pharmaceuticals, real estate, F&amp;B, technology, and entrepreneurial ventures. Proven track record in leading cross-functional initiatives, formulating marketing strategies, and delivering measurable commercial outcomes—including successful product launches, sell-out campaigns, and sales growth. Seeking to contribute strategic thinking, creativity, and execution excellence to a dynamic marketing team.</p>
+      </section>
+
+      <!-- 2. EDUCATION -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <span class="lang-vi">Học vấn</span>
+            <span class="lang-en">Education</span>
+          </h2>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">HUFLIT</div>
+          <div class="edu-meta lang-vi">
+            <span>Cử nhân Thương mại điện tử</span>
+            <span class="edu-period">2009 – 2013</span>
+          </div>
+          <div class="edu-meta lang-en">
+            <span>Bachelor's Degree in E-commerce</span>
+            <span class="edu-period">2009 – 2013</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. WORK EXPERIENCE -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg></span>
+            <span class="lang-vi">Kinh nghiệm làm việc</span>
+            <span class="lang-en">Work Experience</span>
+          </h2>
+        </div>
+        
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M12 24c0-4.4 3.6-8 8-8h4c4.4 0 8 3.6 8 8v1H12v-1z" fill="#9E3B3D" fill-opacity="0.16" stroke="#9E3B3D" stroke-width="1.6"/>
+      <path d="M10 28h24" stroke="#9E3B3D" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M18 11c0-1.5 1-2.2 1-3.5M22 11c0-1.5 1-2.2 1-3.5M26 11c0-1.5 1-2.2 1-3.5" stroke="#C57B7C" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="32.5" cy="32.5" r="5.5" fill="#FFFFFF" stroke="#9E3B3D" stroke-width="1.5"/>
+      <path d="M32.5 29.5v6M29.5 32.5h6" stroke="#9E3B3D" stroke-width="1.3" stroke-linecap="round"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Trưởng phòng Brand Marketing (Brand Marketing Manager)</span>
+              <span class="period-pill">01/2026 – Hiện tại</span>
+            </div>
+            <div class="company-name">Công ty Thương mại Kỹ thuật Hồng Thái</div>
+            <div class="key-badge">Dự án phụ trách: Nhà hàng Bantianyao • Các nhà hàng F&amp;B vừa và nhỏ • TopOneLogics • Wayjet AI</div>
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Brand Marketing Manager</span>
+              <span class="period-pill">Jan 2026 – Present</span>
+            </div>
+            <div class="company-name">Hong Thai Technical Trading Co., Ltd.</div>
+            <div class="key-badge">Key Projects: Bantianyao Restaurant • SME F&amp;B Brands • TopOneLogics • Wayjet AI</div>
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Xây dựng và triển khai chiến lược Marketing tổng thể, định vị và phát triển thương hiệu dài hạn.</span></li>
+<li><span class="b-dot"></span><span>Lập kế hoạch, quản lý và điều phối danh mục dự án Marketing đa ngành thuộc lĩnh vực F&amp;B (nhà hàng <strong>Bantianyao</strong>, các thương hiệu ẩm thực vừa và nhỏ) và công nghệ (<strong>TopOneLogics</strong>, <strong>Wayjet AI</strong>).</span></li>
+<li><span class="b-dot"></span><span>Điều hành đội ngũ Marketing, tối ưu phân bổ nguồn lực và đánh giá hiệu suất nhân sự.</span></li>
+<li><span class="b-dot"></span><span>Quản trị ngân sách Marketing, tối ưu chi phí và tối đa hóa hiệu quả đầu tư (ROI).</span></li>
+<li><span class="b-dot"></span><span>Giám sát tiến độ, đảm bảo chất lượng thực thi và đo lường hiệu quả triển khai chiến dịch.</span></li>
+<li><span class="b-dot"></span><span>Phát triển và thúc đẩy chiến lược Digital Marketing, Performance Marketing và Tăng trưởng (Growth).</span></li>
+<li><span class="b-dot"></span><span>Xây dựng hệ thống vận hành, chuẩn hóa quy trình (SOP) và ứng dụng AI vào hoạt động Marketing.</span></li>
+<li><span class="b-dot"></span><span>Phân tích dữ liệu, đánh giá hiệu quả kinh doanh và tham mưu chiến lược cho Ban Giám đốc.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Formulate and execute comprehensive marketing strategies, brand positioning, and long-term brand development plans.</span></li>
+<li><span class="b-dot"></span><span>Plan, direct, and coordinate multi-industry marketing portfolios across F&amp;B (<strong>Bantianyao</strong> restaurant and SME dining concepts) and technology (<strong>TopOneLogics</strong> and <strong>Wayjet AI</strong>).</span></li>
+<li><span class="b-dot"></span><span>Lead the marketing team, optimize resource allocation, and evaluate team performance.</span></li>
+<li><span class="b-dot"></span><span>Manage marketing budgets, optimize cost efficiency, and maximize marketing return on investment (ROI).</span></li>
+<li><span class="b-dot"></span><span>Monitor campaign timelines, enforce execution quality, and assess overall campaign effectiveness.</span></li>
+<li><span class="b-dot"></span><span>Develop and drive Digital Marketing, Performance Marketing, and Growth strategies.</span></li>
+<li><span class="b-dot"></span><span>Establish marketing operating systems, standardize SOPs, and integrate AI into marketing workflows.</span></li>
+<li><span class="b-dot"></span><span>Analyze performance data, evaluate business results, and provide strategic counsel to the Board of Directors.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M13 21h18l-1.5 11a2 2 0 0 1-2 1.8h-11a2 2 0 0 1-2-1.8L13 21z" fill="#9E3B3D" fill-opacity="0.15" stroke="#9E3B3D" stroke-width="1.6"/>
+      <path d="M11 21c0-3 2.5-5 5.5-5 .8-2.5 3-4 5.5-4s4.7 1.5 5.5 4c3 0 5.5 2 5.5 5H11z" stroke="#9E3B3D" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="22" cy="11.5" r="2" fill="#9E3B3D"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Nhà sáng lập &amp; Trưởng bộ phận Marketing (Founder &amp; Marketing Lead)</span>
+              <span class="period-pill">2023 – Hiện tại</span>
+            </div>
+            <div class="company-name">Thương hiệu Bánh thủ công (Handmade Bakery Business)</div>
+            
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Founder &amp; Marketing Lead</span>
+              <span class="period-pill">2023 – Present</span>
+            </div>
+            <div class="company-name">Handmade Bakery Business</div>
+            
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Sáng lập và điều hành thương hiệu bánh thủ công cao cấp chuyên dòng sản phẩm quà tặng nghệ nhân.</span></li>
+<li><span class="b-dot"></span><span>Xây dựng thương hiệu từ giai đoạn khởi đầu, bao gồm nhận diện thương hiệu, định vị sản phẩm, chiến lược giá và thu hút khách hàng.</span></li>
+<li><span class="b-dot"></span><span>Hoạch định và triển khai chiến lược Content Marketing trên TikTok, Facebook và các sàn thương mại điện tử.</span></li>
+<li><span class="b-dot"></span><span>Quản trị vận hành kinh doanh toàn diện từ kế hoạch sản xuất, quản lý tồn kho, chăm sóc khách hàng đến hiệu quả tài chính.</span></li>
+<li><span class="b-dot"></span><span>Xây dựng cộng đồng khách hàng trung thành thông qua trải nghiệm cá nhân hóa và tiếp thị quan hệ (Relationship Marketing).</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Founded and managed a premium handmade bakery brand specializing in artisan gift products.</span></li>
+<li><span class="b-dot"></span><span>Built the brand from the ground up, covering brand identity, product positioning, pricing strategy, and customer acquisition.</span></li>
+<li><span class="b-dot"></span><span>Developed content marketing strategies across TikTok, Facebook, and e-commerce platforms.</span></li>
+<li><span class="b-dot"></span><span>Oversaw end-to-end business operations, spanning production planning, inventory control, customer service, and financial performance.</span></li>
+<li><span class="b-dot"></span><span>Cultivated a loyal customer community through personalized experiences and relationship marketing.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <rect x="10" y="17" width="9" height="17" rx="1" fill="#9E3B3D" fill-opacity="0.15" stroke="#9E3B3D" stroke-width="1.5"/>
+      <rect x="19" y="10" width="10" height="24" rx="1" fill="#FFFFFF" stroke="#9E3B3D" stroke-width="1.6"/>
+      <rect x="29" y="20" width="6" height="14" rx="1" fill="#9E3B3D" fill-opacity="0.22" stroke="#9E3B3D" stroke-width="1.5"/>
+      <path d="M22 14h4M22 18h4M22 22h4M22 26h4M13 21h3M13 25h3" stroke="#9E3B3D" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M8 34h29" stroke="#9E3B3D" stroke-width="1.6" stroke-linecap="round"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Chuyên viên Marketing Cấp cao (Senior Marketing Executive)</span>
+              <span class="period-pill">2021 – 2023</span>
+            </div>
+            <div class="company-name">SonKim Land</div>
+            <div class="key-badge">Dự án trọng điểm: The 9 Stellars</div>
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Senior Marketing Executive</span>
+              <span class="period-pill">2021 – 2023</span>
+            </div>
+            <div class="company-name">SonKim Land</div>
+            <div class="key-badge">Key Project: The 9 Stellars</div>
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Quản lý ngân sách truyền thông; phối hợp cùng các bên liên quan nội bộ và đối tác agency triển khai các chiến dịch truyền thông tích hợp cho dự án <strong>The 9 Stellars</strong>.</span></li>
+<li><span class="b-dot"></span><span>Dẫn dắt chiến dịch truyền thông tích hợp và sự kiện mở bán Giai đoạn 2 dự án <strong>The 9 Stellars</strong>, góp phần tiêu thụ 100% sản phẩm mở bán trong giai đoạn ra mắt.</span></li>
+<li><span class="b-dot"></span><span>Phát triển nội dung Marketing song ngữ trên cả kênh Digital và Offline, đảm bảo tính nhất quán thương hiệu.</span></li>
+<li><span class="b-dot"></span><span>Theo dõi xu hướng thị trường và đề xuất chiến lược truyền thông nhằm nâng cao nhận diện thương hiệu và độ phủ dự án.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Managed communications budgets and partnered with internal stakeholders and external agencies to execute integrated marketing campaigns for <strong>The 9 Stellars</strong>.</span></li>
+<li><span class="b-dot"></span><span>Led the Phase 2 integrated marketing campaign and launch event for <strong>The 9 Stellars</strong>, contributing to a 100% sell-out of available units during the launch period.</span></li>
+<li><span class="b-dot"></span><span>Produced bilingual marketing content across digital and offline channels while maintaining brand consistency.</span></li>
+<li><span class="b-dot"></span><span>Monitored market trends and proposed communication strategies to elevate brand awareness and project visibility.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M10 31L28 13l5 5L15 36H10v-5z" fill="#9E3B3D" fill-opacity="0.14" stroke="#9E3B3D" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M14 27l2 2M18 23l2 2M22 19l2 2" stroke="#9E3B3D" stroke-width="1.4" stroke-linecap="round"/>
+      <rect x="24" y="24" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#9E3B3D" stroke-width="1.5"/>
+      <path d="M27 29h4M29 27v4" stroke="#9E3B3D" stroke-width="1.4" stroke-linecap="round"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Trợ lý Tổng Giám đốc kiêm Chuyên viên Marketing</span>
+              <span class="period-pill">2020 – 2021</span>
+            </div>
+            <div class="company-name">Công ty Cổ phần Maika</div>
+            
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Assistant General Manager &amp; Marketing Executive</span>
+              <span class="period-pill">2020 – 2021</span>
+            </div>
+            <div class="company-name">Maika Joint Stock Company</div>
+            
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Hỗ trợ lập ngân sách và giám sát tiến độ triển khai các hoạt động quảng bá thương hiệu.</span></li>
+<li><span class="b-dot"></span><span>Lập kế hoạch và điều phối triển khai chiến dịch CSR cung cấp nước sạch cho các trường tiểu học vùng sâu, vùng xa.</span></li>
+<li><span class="b-dot"></span><span>Biên soạn tài liệu kỹ thuật chuyên ngành về vật liệu xây dựng phục vụ các buổi đào tạo nội bộ.</span></li>
+<li><span class="b-dot"></span><span>Biên tập nội dung quảng cáo và thông cáo báo chí.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Supported budgeting and implementation tracking for brand promotion activities.</span></li>
+<li><span class="b-dot"></span><span>Planned and executed a CSR campaign delivering clean water to primary schools in remote areas.</span></li>
+<li><span class="b-dot"></span><span>Prepared specialized technical documentation on building materials for internal training sessions.</span></li>
+<li><span class="b-dot"></span><span>Drafted advertising copy and press releases.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M22 33c6.5-2.5 10-8 10-15-4.5 0-8 2-10 5-2-3-5.5-5-10-5 0 7 3.5 12.5 10 15z" fill="#9E3B3D" fill-opacity="0.16" stroke="#9E3B3D" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M22 33V16" stroke="#9E3B3D" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="22" cy="12" r="2.2" fill="#9E3B3D"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Quản lý Dự án Marketing (Project Marketing Manager)</span>
+              <span class="period-pill">2019 – 2020</span>
+            </div>
+            <div class="company-name">Công ty Cổ phần Tư vấn &amp; Thương mại Golden Sand</div>
+            
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Project Marketing Manager</span>
+              <span class="period-pill">2019 – 2020</span>
+            </div>
+            <div class="company-name">Golden Sand Trading &amp; Consulting Corporation</div>
+            
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Nghiên cứu thị trường và phân tích đối thủ cạnh tranh nhằm xác định cơ hội kinh doanh và hỗ trợ hoạch định chiến lược Marketing.</span></li>
+<li><span class="b-dot"></span><span>Lập kế hoạch và triển khai các chiến dịch truyền thông tích hợp cho các dòng sản phẩm sức khỏe và dinh dưỡng.</span></li>
+<li><span class="b-dot"></span><span>Thiết kế và triển khai thành công các chiến dịch giải phóng tồn kho, bán hết toàn bộ lượng hàng tồn của các dòng sản phẩm chủ lực như bột đạm đậu Hà Lan (Pea Protein) và thực phẩm bổ sung sức khỏe.</span></li>
+<li><span class="b-dot"></span><span>Đảm bảo toàn bộ ấn phẩm truyền thông tuân thủ đúng định vị thương hiệu và mục tiêu kinh doanh.</span></li>
+<li><span class="b-dot"></span><span>Điều phối liên phòng ban xuyên suốt từ khâu lập kế hoạch đến thực thi chiến dịch.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Conducted market research and competitive analysis to uncover business opportunities and inform marketing strategies.</span></li>
+<li><span class="b-dot"></span><span>Planned and executed integrated marketing campaigns for health and nutrition products.</span></li>
+<li><span class="b-dot"></span><span>Designed and executed inventory clearance campaigns that sold out remaining stock of key product lines, including pea protein powder and health supplements.</span></li>
+<li><span class="b-dot"></span><span>Ensured all marketing assets aligned with brand positioning and business objectives.</span></li>
+<li><span class="b-dot"></span><span>Managed cross-functional coordination from campaign planning through execution.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <rect x="13" y="13" width="18" height="21" rx="3" fill="#9E3B3D" fill-opacity="0.14" stroke="#9E3B3D" stroke-width="1.6"/>
+      <rect x="16" y="9" width="12" height="4" rx="1" fill="#FFFFFF" stroke="#9E3B3D" stroke-width="1.5"/>
+      <path d="M22 19v9M17.5 23.5h9" stroke="#9E3B3D" stroke-width="2" stroke-linecap="round"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Quản lý Nhãn hàng (Brand Manager)</span>
+              <span class="period-pill">2016 – 2019</span>
+            </div>
+            <div class="company-name">Công ty TNHH Dược phẩm Do Thanh</div>
+            <div class="key-badge">Nhãn hàng chủ lực: Viên sủi MyVita</div>
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Brand Manager</span>
+              <span class="period-pill">2016 – 2019</span>
+            </div>
+            <div class="company-name">Do Thanh Pharmaceutical Co., Ltd.</div>
+            <div class="key-badge">Key Brand: MyVita (Effervescent Tablets)</div>
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Dẫn dắt hoạt động phát triển thương hiệu <strong>viên sủi MyVita</strong>, góp phần thúc đẩy tăng trưởng doanh số 10% mỗi năm (YoY).</span></li>
+<li><span class="b-dot"></span><span>Triển khai thành công các chiến dịch ra mắt sản phẩm mới trên đa kênh truyền thống và kỹ thuật số.</span></li>
+<li><span class="b-dot"></span><span>Nghiên cứu hành vi người tiêu dùng (Consumer Insights) và phân tích đối thủ để khai phá cơ hội thị trường.</span></li>
+<li><span class="b-dot"></span><span>Hợp tác cùng KOLs/KOCs lĩnh vực y tế – sức khỏe nhằm gia tăng độ nhận diện thương hiệu và niềm tin khách hàng.</span></li>
+<li><span class="b-dot"></span><span>Quản lý vật phẩm Trade Marketing và các chương trình kích hoạt tại nhà thuốc (Pharmacy Activation) nhằm tăng cường hiện diện bán lẻ.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Led brand development for <strong>MyVita effervescent tablets</strong>, contributing to 10% year-over-year (YoY) sales growth.</span></li>
+<li><span class="b-dot"></span><span>Successfully launched new product campaigns across traditional and digital channels.</span></li>
+<li><span class="b-dot"></span><span>Conducted consumer insight research and competitor analysis to identify market opportunities.</span></li>
+<li><span class="b-dot"></span><span>Partnered with healthcare KOLs and KOCs to boost brand awareness and consumer trust.</span></li>
+<li><span class="b-dot"></span><span>Managed trade marketing collateral and pharmacy activation programs to strengthen retail visibility.</span></li>
+      </ul>
+    </article>
+    
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M12 18h18l-1.8 14a2 2 0 0 1-2 1.8H15.8a2 2 0 0 1-2-1.8L12 18z" fill="#9E3B3D" fill-opacity="0.14" stroke="#9E3B3D" stroke-width="1.6"/>
+      <path d="M16.5 18v-2.2a4.5 4.5 0 0 1 9 0V18" stroke="#9E3B3D" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M26 28c4.5-.5 8-3.8 8-8.5-4.7 0-8 3.5-8.5 8" fill="#FFFFFF" stroke="#9E3B3D" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M26 28c1.5-2 3.2-3.5 5-4.8" stroke="#9E3B3D" stroke-width="1.3" stroke-linecap="round"/>
+    </svg></div>
+        <div class="exp-head-text">
+          <div class="lang-vi">
+            <div class="exp-role-line">
+              <span class="role-title">Trợ lý Quản lý Nhãn hàng (Assistant Brand Manager)</span>
+              <span class="period-pill">2014 – 2016</span>
+            </div>
+            <div class="company-name">Công ty Cổ phần Vinamit</div>
+            <div class="key-badge">Danh mục phụ trách: Nước mía sấy thăng hoa Vinamit • Nhánh sản phẩm Organic (Rau củ tươi &amp; Trái cây sấy dẻo)</div>
+          </div>
+          <div class="lang-en">
+            <div class="exp-role-line">
+              <span class="role-title">Assistant Brand Manager</span>
+              <span class="period-pill">2014 – 2016</span>
+            </div>
+            <div class="company-name">Vinamit Joint Stock Company</div>
+            <div class="key-badge">Product Portfolio: Vinamit Freeze-Dried Sugarcane Juice • Organic Lines (Fresh Vegetables &amp; Soft-Dried Fruits)</div>
+          </div>
+        </div>
+      </div>
+      <ul class="bullet-list lang-vi">
+        <li><span class="b-dot"></span><span>Chủ trì ra mắt sản phẩm <strong>Nước mía sấy thăng hoa Vinamit</strong> từ giai đoạn giới thiệu đến kích hoạt thị trường.</span></li>
+<li><span class="b-dot"></span><span>Phụ trách quản lý nhãn hàng và triển khai hoạt động tiếp thị cho các nhánh sản phẩm <strong>Organic</strong> của công ty, bao gồm <strong>rau củ tươi</strong> và <strong>trái cây sấy dẻo</strong>.</span></li>
+<li><span class="b-dot"></span><span>Lập kế hoạch và triển khai chiến dịch dùng thử sản phẩm (Sampling) trên toàn quốc tại các chuỗi bán lẻ lớn (Co.opmart, Lotte Mart, Big C, AEON), gia tăng nhận biết và tương tác khách hàng.</span></li>
+<li><span class="b-dot"></span><span>Xây dựng nội dung truyền thông tích hợp trên nền tảng Digital, PR, mạng xã hội và ấn phẩm quảng bá.</span></li>
+<li><span class="b-dot"></span><span>Vận hành, theo dõi và tối ưu hiệu quả các chiến dịch quảng cáo Google Ads và Facebook Ads.</span></li>
+<li><span class="b-dot"></span><span>Thực hiện nghiên cứu thị trường, phân tích insight người tiêu dùng và đối chiếu đối thủ phục vụ chiến lược Marketing.</span></li>
+<li><span class="b-dot"></span><span>Phối hợp liên phòng ban đảm bảo tiến độ thực thi chiến dịch và tính nhất quán trong truyền thông thương hiệu.</span></li>
+      </ul>
+      <ul class="bullet-list lang-en">
+        <li><span class="b-dot"></span><span>Led the launch of <strong>Vinamit Freeze-Dried Sugarcane Juice</strong> from product introduction through market activation.</span></li>
+<li><span class="b-dot"></span><span>Managed brand marketing initiatives across the company's <strong>Organic product lines</strong>, encompassing <strong>fresh vegetables</strong> and <strong>soft-dried fruits</strong>.</span></li>
+<li><span class="b-dot"></span><span>Planned and executed nationwide sampling campaigns across major retail chains (Co.opmart, Lotte Mart, Big C, and AEON), increasing product awareness and consumer engagement.</span></li>
+<li><span class="b-dot"></span><span>Developed integrated marketing content across digital platforms, PR, social media, and promotional materials.</span></li>
+<li><span class="b-dot"></span><span>Managed, monitored, and optimized Google Ads and Facebook Ads campaigns.</span></li>
+<li><span class="b-dot"></span><span>Conducted market research, consumer insight analysis, and competitive benchmarking to support marketing strategy.</span></li>
+<li><span class="b-dot"></span><span>Coordinated cross-functional teams to ensure seamless campaign execution and consistent brand messaging.</span></li>
+      </ul>
+    </article>
+    
+      </section>
+
+      <!-- 4. ACTIVITIES -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+            <span class="lang-vi">Hoạt động</span>
+            <span class="lang-en">Activities</span>
+          </h2>
+        </div>
+        <article class="exp-card">
+          <div class="exp-head">
+            <div class="sector-icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" rx="10" fill="#FDF3F3" stroke="#E9CFCF"/>
+      <path d="M22 10s-8 8.5-8 14a8 8 0 0 0 16 0c0-5.5-8-14-8-14z" fill="#9E3B3D" fill-opacity="0.16" stroke="#9E3B3D" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M18.5 24.5a3.5 3.5 0 0 0 3.5 3.5" stroke="#9E3B3D" stroke-width="1.6" stroke-linecap="round"/>
+    </svg></div>
+            <div class="exp-head-text">
+              <div class="lang-vi">
+                <div class="exp-role-line">
+                  <span class="role-title">Quản lý Dự án (Project Manager)</span>
+                  <span class="period-pill">2019</span>
+                </div>
+                <div class="company-name">Chương trình Thiện nguyện "Em Yêu Nước Sạch"</div>
+              </div>
+              <div class="lang-en">
+                <div class="exp-role-line">
+                  <span class="role-title">Project Manager</span>
+                  <span class="period-pill">2019</span>
+                </div>
+                <div class="company-name">Em Yeu Nuoc Sach Charity Program</div>
+              </div>
+            </div>
+          </div>
+          <ul class="bullet-list lang-vi">
+            <li><span class="b-dot"></span><span>Lập kế hoạch và triển khai chiến dịch CSR cung cấp nước sạch cho các trường tiểu học vùng sâu, vùng xa.</span></li>
+            <li><span class="b-dot"></span><span>Phối hợp cùng các đội ngũ liên chức năng tổ chức các hoạt động gắn kết cộng đồng.</span></li>
+            <li><span class="b-dot"></span><span>Gia tăng nhận diện thương hiệu MyVita thông qua các sáng kiến trách nhiệm xã hội.</span></li>
+          </ul>
+          <ul class="bullet-list lang-en">
+            <li><span class="b-dot"></span><span>Managed planning and execution of a CSR campaign providing clean water to primary schools in remote areas.</span></li>
+            <li><span class="b-dot"></span><span>Collaborated with cross-functional teams to organize community engagement activities.</span></li>
+            <li><span class="b-dot"></span><span>Strengthened MyVita brand awareness through CSR initiatives.</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- 5. SKILLS -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            <span class="lang-vi">Kỹ năng</span>
+            <span class="lang-en">Skills</span>
+          </h2>
+        </div>
+        <div class="skills-grid lang-vi">
+          <div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Kỹ năng Giao tiếp</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:62%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Kỹ năng Thuyết phục &amp; Đàm phán</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Quản trị các bên liên quan</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Phân tích Dữ liệu Bán hàng</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Quản lý Dự án</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Nghiên cứu &amp; Phân tích Dữ liệu ứng dụng AI</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Tối ưu hóa Quy trình Làm việc bằng AI</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+        </div>
+        <div class="skills-grid lang-en">
+          <div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Communication Skills</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:62%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Persuasion &amp; Negotiation</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Stakeholder Management</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Sales Analytics</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">Project Management</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">AI-Assisted Research &amp; Data Analysis</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+<div class="skill-item">
+      <div class="skill-top"><span class="skill-label">AI Workflow Optimization</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;"></div></div>
+    </div>
+        </div>
+      </section>
+
+      <!-- 6. CORE COMPETENCIES -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="lang-vi">Năng lực cốt lõi</span>
+            <span class="lang-en">Core Competencies</span>
+          </h2>
+        </div>
+        <div class="comp-grid lang-vi">
+          <span class="comp-pill">Quản trị Thương hiệu</span>
+<span class="comp-pill">Quản lý Ra mắt Sản phẩm</span>
+<span class="comp-pill">Chiến lược Marketing</span>
+<span class="comp-pill">Truyền thông Tích hợp (IMC)</span>
+<span class="comp-pill">Trade Marketing</span>
+<span class="comp-pill">Nghiên cứu Thị trường &amp; Consumer Insights</span>
+<span class="comp-pill">Digital Marketing</span>
+<span class="comp-pill">Google Ads &amp; Facebook Ads</span>
+<span class="comp-pill">Quản lý Dự án</span>
+<span class="comp-pill">Quản trị Quan hệ Khách hàng (CRM)</span>
+<span class="comp-pill">Đàm phán &amp; Quản trị Đối tác Liên quan</span>
+        </div>
+        <div class="comp-grid lang-en">
+          <span class="comp-pill">Brand Management</span>
+<span class="comp-pill">Product Launch Management</span>
+<span class="comp-pill">Marketing Strategy</span>
+<span class="comp-pill">Integrated Marketing Communication (IMC)</span>
+<span class="comp-pill">Trade Marketing</span>
+<span class="comp-pill">Market Research &amp; Consumer Insights</span>
+<span class="comp-pill">Digital Marketing</span>
+<span class="comp-pill">Google Ads &amp; Facebook Ads</span>
+<span class="comp-pill">Project Management</span>
+<span class="comp-pill">CRM</span>
+<span class="comp-pill">Negotiation &amp; Stakeholder Management</span>
+        </div>
+      </section>
+
+      <!-- 7. INTERESTS -->
+      <section class="cv-section">
+        <div class="section-title-bar">
+          <h2 class="section-heading">
+            <span class="sec-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            <span class="lang-vi">Sở thích</span>
+            <span class="lang-en">Interests</span>
+          </h2>
+        </div>
+        <div class="interests-wrap lang-vi">
+          <span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Đọc sách</span>
+<span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Du lịch</span>
+<span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11v7a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-7M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Nấu ăn</span>
+        </div>
+        <div class="interests-wrap lang-en">
+          <span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Reading</span>
+<span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Traveling</span>
+<span class="interest-chip"><span class="int-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11v7a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-7M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Cooking</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll('[data-set-lang]');
+      var titles = {
+        vi: 'CV | Du Thùy Trang – Brand Marketing Manager',
+        en: 'Resume | Du Thuy Trang – Brand Marketing Manager'
+      };
+
+      function applyLang(lang) {
+        var safeLang = lang === 'en' ? 'en' : 'vi';
+        root.setAttribute('data-lang', safeLang);
+        root.setAttribute('lang', safeLang);
+        document.title = titles[safeLang];
+        buttons.forEach(function (b) {
+          var active = b.getAttribute('data-set-lang') === safeLang;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = btn.getAttribute('data-set-lang');
+          applyLang(lang);
+          if (history.replaceState) {
+            history.replaceState(null, '', '#' + lang);
+          }
+        });
+      });
+
+      var hashLang = (window.location.hash || '').replace('#', '').toLowerCase();
+      if (hashLang === 'en' || hashLang === 'vi') {
+        applyLang(hashLang);
+      }
+    })();
+  </script>
+</body>
+</html>
